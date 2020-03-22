@@ -6,10 +6,15 @@ defmodule PixelMmo.Application do
   use Application
 
   def start(_type, _args) do
+    import Supervisor.Spec, warn: false
+        
     # List all child processes to be supervised
     children = [
       # Start the endpoint when the application starts
-      PixelMmoWeb.Endpoint
+      PixelMmoWeb.Endpoint,
+      supervisor(PixelMmo.ActorSupervisor, []),
+      {PixelMmo.World, []},
+      {PixelMmo.Respawner, []}
       # Starts a worker by calling: PixelMmo.Worker.start_link(arg)
       # {PixelMmo.Worker, arg},
     ]

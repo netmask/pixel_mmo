@@ -18,6 +18,7 @@ defmodule PixelMmoWeb.Router do
 
     get "/", PageController, :index
     get "/game", GameController, :index
+    post "/game", GameController, :create
   end
 
   

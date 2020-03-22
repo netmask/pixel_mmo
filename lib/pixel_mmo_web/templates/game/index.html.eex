@@ -1,3 +1,12 @@
 <div class="pixel-wolrd-viewport">
-  a
+  <%= draw_map(@map, @me) %>
 </div>
+
+<%= form_for @conn, "/game", fn _f -> %>
+  <input type="hidden" value="<%= @name %>" name="name"/>
+  <input type="submit" value="up" name="direction"/>
+  <input type="submit" value="down" name="direction"/>
+  <input type="submit" value="left" name="direction"/>
+  <input type="submit" value="rigth" name="direction"/>
+  <input type="submit" value="attack" name="action"/>
+<% end %>

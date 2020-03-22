@@ -2,10 +2,36 @@
 
 @import "./phoenix.css";
 
-.pixel-world-viewport
+.pixel-wolrd-viewport
 {
     display: grid;
-    width:50%;
-    height:50%;
-    background-color:red;
+    grid-template-columns: repeat(10, 40px);
+    grid-template-rows: repeat(10, 40px);
+
+}
+
+.pixel-wolrd-viewport > div{
+    display: flex;
+    background-color: blue;
+}
+
+
+.pixel-wolrd-viewport > div.wall {
+    background-color: #000000;
+}
+
+.pixel-wolrd-viewport > div.hero {
+    background-color: green;
+}
+
+
+
+
+.pixel-wolrd-viewport > div.hero > .foe {
+    background-color: red;
+}
+
+
+.pixel-wolrd-viewport > div.hero > .dead {
+    background-color: gray;
 }
